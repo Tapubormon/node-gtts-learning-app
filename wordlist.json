@@ -1,0 +1,11 @@
+[
+    {
+      "subject": "Days of the Week",
+      "value": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    },
+    {
+      "subject": "Months of the Year",
+      "value": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    }
+]
+  
