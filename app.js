@@ -67,7 +67,9 @@ app.post("/speak", (req, res) => {
             console.error("TTS Error:", err);
             return res.status(500).json({ error: "Error generating speech" });
         }
-        res.json({ url: `http://localhost:3000/${word}.mp3` });
+        const fileUrl = `${req.protocol}://${req.get("host")}/${word}.mp3`;
+        res.json({ url: fileUrl });
+        // res.json({ url: `http://localhost:3000/${word}.mp3` });
         // Delete the file after sending the response
         setTimeout(() => {
             fs.unlink(filePath, (unlinkErr) => {
@@ -83,7 +85,7 @@ app.post("/speak", (req, res) => {
 
 
 // Start the server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`✅ Server running on http://localhost:${PORT}`);
 });
