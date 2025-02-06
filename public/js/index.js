@@ -163,8 +163,26 @@ const PracticeAgain = () => {
         }
     }
     wrongAnswerCard.style.visibility = "hidden"
+    showWrongAns.style.visibility = "hidden"
     startPractice()
 };
+
+const showWrongAns = document.querySelector('.showWrongAns');
+
+const ShowWrongAnswer = () => {
+    showWrongAns.innerHTML = ""
+    showWrongAns.style.visibility = "visible"
+    
+    console.log("button wrong click")
+
+    wrongWords.forEach(word => {
+      const wordTag = document.createElement('div');
+      wordTag.classList.add('wrongAnsItem');
+      wordTag.textContent = word;
+      showWrongAns.appendChild(wordTag);
+    });
+
+}
 
 
 

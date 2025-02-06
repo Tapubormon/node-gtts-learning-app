@@ -21,7 +21,6 @@ const wordLists = require('./wordlist.json');
 // Home route to render `index.html`
 app.get("/", (req, res) => {
     res.render("index", { wordLists }); 
-    console.log(wordLists)
 });
 
 // API to fetch words from data.json based on the subject
